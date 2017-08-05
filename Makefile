@@ -12,6 +12,8 @@ CURR_HEAD   := $(firstword $(shell git show-ref --hash HEAD | cut -b -6) master)
 GITHUB_PROJ := https://github.com//markdown-it/${NPM_PACKAGE}
 
 
+build: lint browserify test todo 
+
 lint:
 	eslint .
 
@@ -19,14 +21,14 @@ test: lint
 	mocha
 
 coverage:
-	rm -rf coverage
+	-rm -rf coverage
 	istanbul cover node_modules/mocha/bin/_mocha
 
-report-coverage:
-	-istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+report-coverage: coverage
+
 
 browserify:
-	rm -rf ./dist
+	-rm -rf ./dist
 	mkdir dist
 	# Browserify
 	( printf "/*! ${NPM_PACKAGE} ${NPM_VERSION} ${GITHUB_PROJ} @license MIT */" ; \
@@ -35,13 +37,20 @@ browserify:
 
 minify: browserify
 	# Minify
-	uglifyjs dist/markdown-it-deflist.js -b beautify=false,ascii-only=true -c -m \
+	uglifyjs dist/markdown-it-deflist.js -b beautify=false,ascii_only=true -c -m \
 		--preamble "/*! ${NPM_PACKAGE} ${NPM_VERSION} ${GITHUB_PROJ} @license MIT */" \
 		> dist/markdown-it-deflist.min.js
+
+todo:
+	@echo ""
+	@echo "TODO list"
+	@echo "---------"
+	@echo ""
+	grep 'TODO' -n -r ./lib 2>/dev/null || test true
 
 clean:
 	-rm -rf ./coverage/
 	-rm -rf ./dist/
 
-.PHONY: clear lint test coverage browserify minify
-.SILENT: lint test
+.PHONY: clean lint test coverage browserify minify build todo
+.SILENT: help lint test todo
