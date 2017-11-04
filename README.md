@@ -1,8 +1,8 @@
 # markdown-it-deflist
 
-[![Build Status](https://img.shields.io/travis/markdown-it/markdown-it-deflist/master.svg?style=flat)](https://travis-ci.org/markdown-it/markdown-it-deflist)
-[![NPM version](https://img.shields.io/npm/v/markdown-it-deflist.svg?style=flat)](https://www.npmjs.org/package/markdown-it-deflist)
-[![Coverage Status](https://img.shields.io/coveralls/markdown-it/markdown-it-deflist/master.svg?style=flat)](https://coveralls.io/r/markdown-it/markdown-it-deflist?branch=master)
+[![Build Status](https://img.shields.io/travis/GerHobbelt/markdown-it-deflist/master.svg?style=flat)](https://travis-ci.org/GerHobbelt/markdown-it-deflist)
+[![NPM version](https://img.shields.io/npm/v/@gerhobbelt/markdown-it-deflist.svg?style=flat)](https://www.npmjs.org/package/@gerhobbelt/markdown-it-deflist)
+[![Coverage Status](https://img.shields.io/coveralls/GerHobbelt/markdown-it-deflist/master.svg?style=flat)](https://coveralls.io/r/GerHobbelt/markdown-it-deflist?branch=master)
 
 > Definition list (`<dl>`) tag plugin for [markdown-it](https://github.com/markdown-it/markdown-it) markdown parser.
 
@@ -16,15 +16,15 @@ Syntax is based on [pandoc definition lists](http://johnmacfarlane.net/pandoc/RE
 node.js, browser:
 
 ```bash
-npm install markdown-it-deflist --save
-bower install markdown-it-deflist --save
+npm install @gerhobbelt/markdown-it-deflist --save
+bower install @gerhobbelt/markdown-it-deflist --save
 ```
 
 ## Use
 
 ```js
-var md = require('markdown-it')()
-            .use(require('markdown-it-deflist'));
+var md = require('@gerhobbelt/markdown-it')()
+            .use(require('@gerhobbelt/markdown-it-deflist'));
 
 md.render(/*...*/);
 ```
@@ -35,4 +35,4 @@ package system, module will add itself globally as `window.markdownitDeflist`.
 
 ## License
 
-[MIT](https://github.com/markdown-it/markdown-it-deflist/blob/master/LICENSE)
+[MIT](https://github.com/GerHobbelt/markdown-it-deflist/blob/master/LICENSE)
