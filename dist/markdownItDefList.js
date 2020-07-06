@@ -1,4 +1,4 @@
-/*! markdown-it-deflist 2.0.4-2 https://github.com//GerHobbelt/markdown-it-deflist @license MIT */
+/*! markdown-it-deflist 2.0.4-3 https://github.com//GerHobbelt/markdown-it-deflist @license MIT */
 
 'use strict';
 
