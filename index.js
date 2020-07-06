@@ -1,15 +1,13 @@
 // Process definition lists
 //
-'use strict';
-
 
 module.exports = function deflist_plugin(md) {
-  var isSpace = md.utils.isSpace;
+  let isSpace = md.utils.isSpace;
 
   // Search `[:~][\n ]`, returns next pos after marker on success
   // or -1 on fail.
   function skipMarker(state, line) {
-    var pos, marker,
+    let pos, marker,
         start = state.bMarks[line] + state.tShift[line],
         max = state.eMarks[line];
 
@@ -31,7 +29,7 @@ module.exports = function deflist_plugin(md) {
   }
 
   function markTightParagraphs(state, idx) {
-    var i, l,
+    let i, l,
         level = state.level + 2;
 
     for (i = idx + 2, l = state.tokens.length - 2; i < l; i++) {
@@ -44,7 +42,7 @@ module.exports = function deflist_plugin(md) {
   }
 
   function deflist(state, startLine, endLine, silent) {
-    var ch,
+    let ch,
         contentStart,
         ddLine,
         dtLine,
