@@ -227,6 +227,26 @@ foo
 </dl>
 .
 
+Regression test #2 (blockquote inside deflist)
+.
+foo
+: > bar
+
+: baz
+.
+<dl>
+<dt>foo</dt>
+<dd>
+<blockquote>
+<p>bar</p>
+</blockquote>
+</dd>
+<dd>
+<p>baz</p>
+</dd>
+</dl>
+.
+
 
 Coverage, 1 blank line
 .
