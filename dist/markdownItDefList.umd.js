@@ -1,4 +1,4 @@
-/*! markdown-it-deflist 2.0.4-1 https://github.com//GerHobbelt/markdown-it-deflist @license MIT */
+/*! markdown-it-deflist 2.0.4-2 https://github.com//GerHobbelt/markdown-it-deflist @license MIT */
 
 (function (factory) {
   typeof define === 'function' && define.amd ? define(factory) :
